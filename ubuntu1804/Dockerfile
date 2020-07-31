@@ -36,13 +36,18 @@ RUN apt-get install -y cppcheck
 RUN apt-get install -y lcov
 RUN apt-get install -y clang-tidy
 RUN apt-get install -y build-essential libssl-dev
-RUN apt-get install -y gcc-7 g++-7 
+RUN apt-get install -y gcc-8 g++-8 
 RUN apt-get install -y cmake
 
-#boost libraries  
-RUN apt-get install -y libboost-system-dev 
-RUN apt-get install -y libboost-program-options-dev
-RUN apt-get install -y libboost-regex-dev
+#boost libraries   
+RUN apt-get install -y libboost-all-dev
+
+#mars dependencies
+RUN apt-get install -y pkg-config  
+RUN apt-get install -y libopenscenegraph-dev
+RUN apt-get install -y libeigen3-dev
+RUN apt-get install -y libconfig++-dev
+RUN apt-get install -y libtinyxml2-dev 
 
 #setup workdir etc
 WORKDIR /app
